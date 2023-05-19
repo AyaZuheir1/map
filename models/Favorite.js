@@ -24,11 +24,11 @@ const FavoriteSchema = new mongoose.Schema(
       max: 5,
     },
     long: {
-      type: Number,
+      type: String,
       required: true,
     },
     lat: {
-      type: Number,
+      type: String,
       required: true,
     },
   },

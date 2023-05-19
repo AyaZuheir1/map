@@ -8,17 +8,24 @@ router.post("/", async (req, res) => {
     const savedFavorite = await newFavorite.save();
     res.status(200).json(savedFavorite);
   } catch (err) {
-    res.status(500).json(err);
-  }
+    res.status(200).send(  {code: 500,
+      massege:"Internal server error",
+      success: false});  }
 });
 
 //get all Favorites
 router.get("/", async (req, res) => {
   try {
     const Favorites = await Favorite.find();
-    res.status(200).json(Favorites);
+    res.status(200).  send({
+      code: 200,
+      success: true,
+      data: Favorites,
+    });
   } catch (err) {
-    res.status(500).json(err);
+    res.status(200).send(  {code: 500,
+      massege:"Internal server error",
+      success: false});
   }
 });
 
