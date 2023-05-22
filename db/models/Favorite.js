@@ -14,14 +14,7 @@ const FavoriteSchema = new mongoose.Schema(
     },
     desc: {
       type: String,
-      required: true,
       min: 3,
-    },
-    rating: {
-      type: Number,
-      required: true,
-      min: 0,
-      max: 5,
     },
     long: {
       type: String,
@@ -32,7 +25,6 @@ const FavoriteSchema = new mongoose.Schema(
       required: true,
     },
   },
-  { timestamps: true }
 );
 
 module.exports = mongoose.model("Favorite", FavoriteSchema);
